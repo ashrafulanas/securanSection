@@ -1,0 +1,186 @@
+/* Basic common part of CSS Style part */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+ul,
+li {
+  list-style: none;
+}
+img {
+  width: 100%;
+}
+/* End of Basic common part of CSS Style part */
+
+.workSection {
+  margin: 100px 0;
+}
+
+.sectionHeader {
+  margin-bottom: 30px;
+}
+.sectionHeader .sectionTitle {
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+  font-size: 42px;
+}
+.sectionHeader .sectionTitle:after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  background-image: url(../image/header-shape.png);
+  width: 70px;
+  height: 10px;
+  margin-left: -35px;
+}
+.sectionHeader p {
+  padding: 0 300px;
+}
+.colText {
+  padding: 25px;
+
+  text-align: center;
+}
+.icon {
+  margin-bottom: 10px;
+}
+.svg-inline--fa {
+  height: 4em;
+  color: #e45f4d;
+}
+.countItem {
+  position: relative;
+  height: 65px;
+  z-index: 9;
+  color: red;
+  margin: 20px 0;
+}
+.countItem span {
+  position: absolute;
+  top: 50%;
+  bottom: 90%;
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  transform: translate(-50%, -50%);
+  background-color: #a1a1a1;
+  line-height: 24px;
+  color: #000000;
+  font-weight: 700;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.countItem:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 1px;
+  background-color: #a1a1a1;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  z-index: -10;
+}
+.countItem:after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  height: 5px;
+  width: 5px;
+  background-color: #a1a1a1;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  animation: bottom-top 2s infinite;
+  -webkit-animation: bottom-top 2s infinite;
+  z-index: -10;
+}
+
+@keyframes bottom-top {
+  0% {
+    bottom: 0;
+  }
+  25% {
+    bottom: 25%;
+  }
+  50% {
+    bottom: 90%;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+div[class*="col"]:nth-child(even) .countItem:after {
+  top: 0;
+  bottom: auto;
+  animation: top-bottom 2s infinite;
+  -webkit-animation: top-bottom 2s infinite;
+}
+@keyframes top-bottom {
+  0% {
+    top: 0;
+  }
+  25% {
+    top: 25%;
+  }
+  50% {
+    top: 90%;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.cardText {
+}
+.cardText h2 {
+  font-size: 22px;
+  color: #000;
+  text-transform: capitalize;
+}
+.cardText p {
+  color: #343434;
+  line-height: 1.5;
+  font-size: 16px;
+}
