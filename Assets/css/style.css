@@ -60,6 +60,22 @@ img {
 .sectionHeader p {
   padding: 0 300px;
 }
+@media (max-width: 992px) and (min-width: 768px) {
+  .sectionHeader p {
+    padding: 0 120px;
+  }
+  .sectionHeader .sectionTitle {
+    font-size: 36px;
+  }
+}
+@media (max-width: 767px) {
+  .sectionHeader p {
+    padding: 0 15px;
+  }
+  .sectionHeader .sectionTitle {
+    font-size: 32px;
+  }
+}
 .colText {
   padding: 25px;
 
