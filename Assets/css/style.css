@@ -204,9 +204,10 @@ div[class*="col"]:nth-child(even) .countItem:after {
 }
 .card {
   position: relative;
-  width: 350px;
+  width: 100%;
   height: 300px;
 }
+
 .card:hover .cardContent {
   transform: rotateY(180deg);
 }
@@ -216,7 +217,43 @@ div[class*="col"]:nth-child(even) .countItem:after {
   transform-style: preserve-3d;
   transition: transform 0.5s;
 }
-.card .cardContent .cardFront {
+.card .cardContent::before,
+.card .cardContent::after {
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  content: "";
+  transition: all 0.5s ease;
+}
+.card .cardContent::before {
+  top: 0;
+  left: 0;
+  border-top: 3px solid transparent;
+  border-left: 3px solid transparent;
+}
+.card .cardContent::after {
+  bottom: 0;
+  right: 0;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+}
+.card:hover .cardContent::before,
+.card:hover .cardContent::after {
+  width: 50%;
+  height: 50%;
+}
+
+.card:hover .cardContent::before {
+  border-top: 3px solid red;
+  border-left: 3px solid red;
+}
+.card:hover .cardContent::after {
+  border-right: 3px solid red;
+  border-bottom: 3px solid red;
+}
+
+.card .cardContent .cardFront,
+.card .cardContent .cardBack {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -226,15 +263,53 @@ div[class*="col"]:nth-child(even) .countItem:after {
   justify-content: center;
   align-items: center;
 }
+
 .card .cardContent .cardBack {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
   transform: rotateY(180deg);
-  padding: 25px;
   backface-visibility: hidden;
+}
+
+.box {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.box .boxContent::before,
+.box .boxContent::after {
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  content: "";
+  transition: all 0.5s ease;
+}
+
+.box .boxContent::before {
+  top: 0;
+  left: 0;
+  border-top: 3px solid transparent;
+  border-left: 3px solid transparent;
+}
+.box .boxContent::after {
+  bottom: 0;
+  right: 0;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+}
+.box:hover .boxContent::before,
+.box:hover .boxContent::after {
+  width: 50%;
+  height: 50%;
+}
+
+.box:hover .boxContent::before {
+  border-top: 3px solid red;
+  border-left: 3px solid red;
+}
+.box:hover .boxContent::after {
+  border-right: 3px solid red;
+  border-bottom: 3px solid red;
 }
