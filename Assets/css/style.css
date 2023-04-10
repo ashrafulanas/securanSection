@@ -187,7 +187,9 @@ div[class*="col"]:nth-child(even) .countItem:after {
     top: 0;
   }
 }
-
+.flipsection {
+  margin: 100px 0;
+}
 .cardText {
 }
 .cardText h2 {
@@ -199,4 +201,40 @@ div[class*="col"]:nth-child(even) .countItem:after {
   color: #343434;
   line-height: 1.5;
   font-size: 16px;
+}
+.card {
+  position: relative;
+  width: 350px;
+  height: 300px;
+}
+.card:hover .cardContent {
+  transform: rotateY(180deg);
+}
+.card .cardContent {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+.card .cardContent .cardFront {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card .cardContent .cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform: rotateY(180deg);
+  padding: 25px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
